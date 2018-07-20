@@ -19,7 +19,7 @@ public class JoinMessageCommand implements CommandExecutor {
 	@Override
 	public boolean onCommand(CommandSender sender, Command cmd, String lable, String[] args) {
 		cfg = plugin.getConfig();
-		if(cmd.getName().equalsIgnoreCase("joinmessage")) {
+		if(cmd.getName().equalsIgnoreCase("joinmessage") && sender.hasPermission("server.joinmessage")) {
 			if(args.length > 0) {
 				if(args.length > 1) {
 					System.out.println("boolean");
