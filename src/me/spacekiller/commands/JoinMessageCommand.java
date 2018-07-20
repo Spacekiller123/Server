@@ -6,6 +6,7 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.configuration.file.FileConfiguration;
 
 import me.spacekiller.main.Main;
+import me.spacekiller.main.SystemData;
 
 public class JoinMessageCommand implements CommandExecutor {
 
@@ -30,7 +31,7 @@ public class JoinMessageCommand implements CommandExecutor {
 					cfg.set("JoinMessage", Boolean.parseBoolean(args[0].replaceAll(" ", null)));
 					plugin.saveConfig();
 				}
-				sender.sendMessage("JoinMessage wurde auf " + cfg.getString("JoinMessage") + " gesetzt");
+				sender.sendMessage(SystemData.Server + "JoinMessage wurde auf " + cfg.getString("JoinMessage") + " gesetzt");
 			}else {
 				sender.sendMessage("/joinmessage <message>");
 			}
