@@ -1,0 +1,8 @@
+name: Server
+main: me.spacekiller.main.Main
+version: 1.0
+author: Spacekiller
+softdepend: [PermissionsEx]
+commands:
+   joinMessage:
+      description: set joinmessage
