@@ -6,3 +6,4 @@ softdepend: [PermissionsEx]
 commands:
    joinMessage:
       description: set joinmessage
+   onlineZeit

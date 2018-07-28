@@ -72,7 +72,7 @@ public class SystemData {
 	public static FileConfiguration getOnlineConfig() {
 		return cfg2;
 	}
-
+	
 	public static String getFormattingColorCodes(String s) {
 		s = s.replaceAll("&1", "\2471");
 		s = s.replaceAll("&2", "\2472");
@@ -228,4 +228,18 @@ public class SystemData {
 		Magic = ChatColor.MAGIC;
 		Reset = ChatColor.RESET;
 	}
+	
+	public int getDays(String p) {
+		return cfg2.getInt(p + ".Tage");
+	}
+	public int getHours(String p) {
+		return cfg2.getInt(p + ".Stunden");
+	}
+	public int getMins(String p) {
+		return cfg2.getInt(p + ".Minuten");
+	}
+	public int getSecs(String p) {
+		return cfg2.getInt(p + ".Sekunden");
+	}
+
 }
