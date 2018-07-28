@@ -4,6 +4,19 @@ version: 1.0
 author: Spacekiller
 softdepend: [PermissionsEx]
 commands:
-   joinMessage:
+   ?:
+      description: denies ?
+   joinmessage:
       description: set joinmessage
-   onlineZeit
+   onlinezeit:
+      description: shows onlinetime
+   ram:
+      description: shows ramusage
+   ramcheck:
+      description: shows ramusage detailed
+   pl:
+      description: denies pl
+   plugin:
+      description: denies plugin
+   spacedragon:
+      description: spacedragon

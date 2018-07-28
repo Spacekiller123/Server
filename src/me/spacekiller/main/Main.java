@@ -7,6 +7,12 @@ import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import me.spacekiller.commands.JoinMessageCommand;
+import me.spacekiller.commands.OnlineZeitCommand;
+import me.spacekiller.commands.PluginCommand;
+import me.spacekiller.commands.RamCheckCommand;
+import me.spacekiller.commands.RamCommand;
+import me.spacekiller.commands.SpaceDragonCommand;
+import me.spacekiller.listener.ChatTabListener;
 import me.spacekiller.listener.DeathListener;
 import me.spacekiller.listener.JoinListener;
 import me.spacekiller.listener.LeaveListener;
@@ -25,18 +31,27 @@ public class Main extends JavaPlugin {
 		SystemData.loadConfig();
 		registerCommands();
 		registerEvents();
-		//startTimer();
+		startTimer();
 	}
 	
 	public void registerCommands() {
+		getCommand("?").setExecutor(new PluginCommand(this));
 		getCommand("joinMessage").setExecutor(new JoinMessageCommand(this));
+		getCommand("onlinezeit").setExecutor(new OnlineZeitCommand(this));
+		getCommand("pl").setExecutor(new PluginCommand(this));
+		getCommand("plugin").setExecutor(new PluginCommand(this));
+		getCommand("ram").setExecutor(new RamCommand(this));
+		getCommand("ramcheck").setExecutor(new RamCheckCommand(this));
+		getCommand("spacedragon").setExecutor(new SpaceDragonCommand(this));
 	}
 	
 	public void registerEvents() {
 		PluginManager pm = getServer().getPluginManager();
+		pm.registerEvents(new ChatTabListener(this), this);
 		pm.registerEvents(new DeathListener(this), this);
 		pm.registerEvents(new JoinListener(this), this);
 		pm.registerEvents(new LeaveListener(this), this);
+		pm.registerEvents(new SpaceDragonCommand(this), this);
 	}
 	
 	private void startTimer() {
