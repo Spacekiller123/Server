@@ -33,7 +33,7 @@ public class WhoIsCommand implements CommandExecutor {
 				sender.sendMessage("§7§lUUID: §f" + p.getUniqueId());
 				sender.sendMessage("§7§lIP: §f" + p.getAddress().toString());
 				sender.sendMessage("§7§lHost: §f" + p.getAddress().getHostString());
-				sendr.sendMessage("§7§lGespielte Zeit: §f" + time);
+				sender.sendMessage("§7§lGespielte Zeit: §f" + time);
 			}else {
 				
 			}
