@@ -24,19 +24,7 @@ public class HelpCommand implements CommandExecutor{
 	public boolean onCommand(CommandSender sender, Command cmd, String lable, String[] args) {
 		if(cmd.getName().equalsIgnoreCase("?") || cmd.getName().equalsIgnoreCase("h") || cmd.getName().equalsIgnoreCase("help")){
 			Player p = (Player) sender;
-			sender.sendMessage(SystemData.Server + "§7§lDir stehen folgene Befehle zur Verfügung:");
-			sender.sendMessage("/whisper");
-			sender.sendMessage("/skypvp");
-			sender.sendMessage("/warp");
-			sender.sendMessage("/spawn");
-			sender.sendMessage("/tp");
-			sender.sendMessage("/msg");
-			sender.sendMessage("/r");
-			sender.sendMessage("/a");
-			sender.sendMessage("/");
-			sender.sendMessage("/");
-			sender.sendMessage("/");
-			sender.sendMessage("/");
+			sender.sendMessage(SystemData.Server + "§7§lVersuche es mal mit /gui, da gibt es alles was du brauchst");
 		}
 		return false;
 	}
