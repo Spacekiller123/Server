@@ -3,6 +3,7 @@ package me.spacekiller.commands;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
+import org.bukkit.entity.Player;
 
 import me.spacekiller.main.Main;
 import me.spacekiller.main.SystemData;
@@ -22,6 +23,7 @@ public class HelpCommand implements CommandExecutor{
 	@Override
 	public boolean onCommand(CommandSender sender, Command cmd, String lable, String[] args) {
 		if(cmd.getName().equalsIgnoreCase("?") || cmd.getName().equalsIgnoreCase("h") || cmd.getName().equalsIgnoreCase("help")){
+			Player p = (Player) sender;
 			sender.sendMessage(SystemData.Server + "§7§lDir stehen folgene Befehle zur Verfügung:");
 			sender.sendMessage("/whisper");
 			sender.sendMessage("/skypvp");
@@ -35,7 +37,6 @@ public class HelpCommand implements CommandExecutor{
 			sender.sendMessage("/");
 			sender.sendMessage("/");
 			sender.sendMessage("/");
-			jb.parse("test").withClickEvent(ClickAction.RUN_COMMAND, "/help");
 		}
 		return false;
 	}

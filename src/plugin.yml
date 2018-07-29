@@ -4,12 +4,16 @@ version: 1.0
 author: Spacekiller
 softdepend: [PermissionsEx]
 commands:
+   ?:
+      description: help
    gamemode:
       description: gamemode
-      aliases: [gm]
+   gm:
+      description: gamemode
+   h:
+      description: help
    help:
       description: help
-      aliases: [h, ?]
    joinmessage:
       description: set joinmessage
    onlinezeit:
