@@ -16,11 +16,12 @@ public class PluginCommand implements CommandExecutor{
 	}
 	
 	public boolean onCommand(CommandSender sender, Command cmd, String lable, String[] args) {
-		if(cmd.getName().equalsIgnoreCase("pl") || cmd.getName().equalsIgnoreCase("plugin")) {
-			sender.sendMessage(SystemData.Server + "§7§lDiese Daten sind vertraulich...");
-		}else if(cmd.getName().equalsIgnoreCase("?")){
-			sender.sendMessage(SystemData.Server + "§7§lNutze /hilfe um die Befehle nachzuschauen.");
+		if(!sender.isOp() || !sender.hasPermission("server.plugin")) {
+			if(cmd.getName().equalsIgnoreCase("pl") || cmd.getName().equalsIgnoreCase("plugin")) {
+				sender.sendMessage(SystemData.Server + "§7§lDiese Daten sind vertraulich...");
+			}
 		}
+		
 		return false;
 	}
 

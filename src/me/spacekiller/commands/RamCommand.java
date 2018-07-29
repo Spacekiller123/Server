@@ -19,7 +19,7 @@ public class RamCommand implements CommandExecutor {
 	public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
 		Player p = (Player) sender;
 		if (cmd.getName().equalsIgnoreCase("ram")) {
-			if ((p.hasPermission("system.ram")) && (args.length == 0)) {
+			if ((p.hasPermission("server.ram")) && (args.length == 0)) {
 				double ram = SystemData.usedMemory();
 				if ((ram >= 0.0D) && (ram <= 10.0D)) {
 					p.sendMessage("§3=======§9§lRam§3=======");

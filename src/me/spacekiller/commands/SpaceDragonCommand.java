@@ -42,7 +42,7 @@ public class SpaceDragonCommand implements CommandExecutor, Listener{
 	@SuppressWarnings("deprecation")
 	public boolean onCommand(CommandSender sender, Command cmd, String string, String[] args) {
 		p = (Player) sender;
-		if (cmd.getName().equalsIgnoreCase("spacedragon") && p.hasPermission("system.dragon")) {
+		if (cmd.getName().equalsIgnoreCase("spacedragon") && p.hasPermission("server.dragon")) {
 			Location loc = p.getLocation();
 			if (args.length == 0) {
 				p.sendMessage(prefix + "/spacedragon spawn/remove");

@@ -6,13 +6,7 @@ import org.bukkit.entity.Player;
 import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.java.JavaPlugin;
 
-import me.spacekiller.commands.JoinMessageCommand;
-import me.spacekiller.commands.OnlineZeitCommand;
-import me.spacekiller.commands.PluginCommand;
-import me.spacekiller.commands.RamCheckCommand;
-import me.spacekiller.commands.RamCommand;
-import me.spacekiller.commands.SpaceDragonCommand;
-import me.spacekiller.commands.WhoIsCommand;
+import me.spacekiller.commands.*;
 import me.spacekiller.listener.ChatTabListener;
 import me.spacekiller.listener.DeathListener;
 import me.spacekiller.listener.JoinListener;
@@ -36,7 +30,11 @@ public class Main extends JavaPlugin {
 	}
 
 	public void registerCommands() {
-		getCommand("?").setExecutor(new PluginCommand(this));
+		getCommand("gm").setExecutor(new GamemodeCommand(this));
+		getCommand("gamemode").setExecutor(new GamemodeCommand(this));
+		getCommand("?").setExecutor(new HelpCommand(this));
+		getCommand("h").setExecutor(new HelpCommand(this));
+		getCommand("help").setExecutor(new HelpCommand(this));
 		getCommand("joinMessage").setExecutor(new JoinMessageCommand(this));
 		getCommand("onlinezeit").setExecutor(new OnlineZeitCommand(this));
 		getCommand("pl").setExecutor(new PluginCommand(this));
@@ -45,6 +43,7 @@ public class Main extends JavaPlugin {
 		getCommand("ramcheck").setExecutor(new RamCheckCommand(this));
 		getCommand("spacedragon").setExecutor(new SpaceDragonCommand(this));
 		getCommand("whois").setExecutor(new WhoIsCommand(this));
+		
 	}
 
 	public void registerEvents() {

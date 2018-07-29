@@ -19,7 +19,7 @@ public class RamCheckCommand implements CommandExecutor {
 	public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
 		Player p = (Player) sender;
 		if (cmd.getName().equalsIgnoreCase("ramcheck")) {
-			if ((p.hasPermission("system.ram")) && (args.length == 0)) {
+			if ((p.hasPermission("server.ram")) && (args.length == 0)) {
 				double ram = SystemData.usedMemory();
 				double usedmemory = (Runtime.getRuntime().totalMemory() - Runtime.getRuntime().freeMemory()) / 1048576L;
 				if ((ram >= 0.0D) && (ram <= 10.0D)) {
