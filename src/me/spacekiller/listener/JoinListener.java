@@ -24,7 +24,7 @@ public class JoinListener implements Listener {
 		if(message instanceof String) {
 			e.setJoinMessage(message.toString().replaceAll("%Player%", e.getPlayer().getName()));
 		}else if(!cfg.getBoolean("JoinMessage")) {
-			e.setJoinMessage(null);;
+			e.setJoinMessage(null);
 		}	
 	}
 }

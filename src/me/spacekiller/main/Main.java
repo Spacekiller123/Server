@@ -42,6 +42,7 @@ public class Main extends JavaPlugin {
 		getCommand("ram").setExecutor(new RamCommand(this));
 		getCommand("ramcheck").setExecutor(new RamCheckCommand(this));
 		getCommand("spacedragon").setExecutor(new SpaceDragonCommand(this));
+		getCommand("spawn").setExecutor(new SpawnCommand(this));
 		getCommand("whois").setExecutor(new WhoIsCommand(this));
 		
 	}

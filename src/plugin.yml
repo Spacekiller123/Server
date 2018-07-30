@@ -28,5 +28,7 @@ commands:
       description: denies plugin
    spacedragon:
       description: spacedragon
+   spawn:
+      description: spawntp
    whois:
       description: WhoIs
