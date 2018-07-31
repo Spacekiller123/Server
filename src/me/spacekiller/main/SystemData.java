@@ -4,9 +4,14 @@ import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.logging.Logger;
+
+import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
+import org.bukkit.Material;
 import org.bukkit.configuration.file.*;
 import org.bukkit.entity.Player;
+import org.bukkit.inventory.Inventory;
+import org.bukkit.inventory.ItemStack;
 
 import me.spacekiller.util.TpaObject;
 
@@ -138,6 +143,34 @@ public class SystemData {
 	public static ArrayList<TpaObject> tpaList = new ArrayList<TpaObject>();
 	public static ArrayList<Player> tpdenyList = new ArrayList<Player>();
 
+	public static Inventory spielerGui = Bukkit.createInventory(null, 45,"§c§lMineria");
+	public static Inventory warpGui = Bukkit.createInventory(null, 45,"§5§lWarps");
+	public static Inventory tpGui;
+	public static Inventory ironInv = Bukkit.createInventory(null, 45,"§8§lEisenausrüstung");
+	public static Inventory goldInv = Bukkit.createInventory(null, 45,"§6§lGoldausrüstungp");
+	public static Inventory diamondInv = Bukkit.createInventory(null, 45,"§b§lDiamantenausrüstung");
+	public static Inventory foodInv = Bukkit.createInventory(null, 45,"§c§lEssen");
+	public static Inventory potionsInv = Bukkit.createInventory(null, 45,"§9§lTränke");
+	public static Inventory enchantmentInv = Bukkit.createInventory(null, 45,"§5§lVerzauberungen");
+	
+	public static ArrayList<String> warpList = new ArrayList<String>();
+	public static ArrayList<String> tpList = new ArrayList<String>();
+	public static ArrayList<String> ironList = new ArrayList<String>();
+	public static ArrayList<String> goldList = new ArrayList<String>();
+	public static ArrayList<String> diamondList = new ArrayList<String>();
+	public static ArrayList<String> foodList = new ArrayList<String>();
+	public static ArrayList<String> potionsList = new ArrayList<String>();
+	public static ArrayList<String> enchantmentList = new ArrayList<String>();
+	
+	public static ItemStack warp = new ItemStack(Material.ENDER_PORTAL_FRAME);
+	public static ItemStack tp = new ItemStack(Material.ENDER_PEARL);
+	public static ItemStack iron = new ItemStack(Material.IRON_CHESTPLATE);
+	public static ItemStack gold = new ItemStack(Material.GOLD_CHESTPLATE);
+	public static ItemStack diamond = new ItemStack(Material.DIAMOND_CHESTPLATE);
+	public static ItemStack food = new ItemStack(Material.APPLE);
+	public static ItemStack potions = new ItemStack(Material.POTION);
+	public static ItemStack enchantment = new ItemStack(Material.ENCHANTED_BOOK);
+	
 	public static File SystemData;
 	public static File OnlineData;
 	public static FileConfiguration cfg;

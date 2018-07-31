@@ -7,11 +7,7 @@ import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import me.spacekiller.commands.*;
-import me.spacekiller.listener.ChatListener;
-import me.spacekiller.listener.ChatTabListener;
-import me.spacekiller.listener.DeathListener;
-import me.spacekiller.listener.JoinListener;
-import me.spacekiller.listener.LeaveListener;
+import me.spacekiller.listener.*;
 
 public class Main extends JavaPlugin {
 
@@ -60,6 +56,7 @@ public class Main extends JavaPlugin {
 		pm.registerEvents(new ChatTabListener(this), this);
 		pm.registerEvents(new DeathListener(this), this);
 		pm.registerEvents(new GuiCommand(this), this);
+		pm.registerEvents(new GuiListener(this), this);
 		pm.registerEvents(new JoinListener(this), this);
 		pm.registerEvents(new LeaveListener(this), this);
 		pm.registerEvents(new SpaceDragonCommand(this), this);
