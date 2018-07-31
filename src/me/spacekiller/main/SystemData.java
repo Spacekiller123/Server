@@ -2,14 +2,20 @@ package me.spacekiller.main;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.logging.Logger;
 import org.bukkit.ChatColor;
 import org.bukkit.configuration.file.*;
+import org.bukkit.entity.Player;
+
+import me.spacekiller.util.TpaObject;
 
 public class SystemData {
 
 	public SystemData() {
 	}
+	
+	public static SystemData instance;
 
 	public static void loadConfig() {
 		if (!cfg.contains("Server"))
@@ -39,9 +45,9 @@ public class SystemData {
 		if (!cfg.contains("Falsch"))
 			cfg.addDefault("Falsch", "§8§l[§9§lReflexcraft§8§l] §7");
 		if (!cfg.contains("noPerm"))
-			cfg.addDefault("noPerm", "§8§l[§9§lReflexcraft§8§l] §7");
+			cfg.addDefault("noPerm", "§8§l[§9§lReflexcraft§8§l] §7 Du hast leider keine Rechte um diesen Befehl auszuführen.");
 		if (!cfg.contains("Online"))
-			cfg.addDefault("Online", "§8§l[§9§lReflexcraft§8§l] §7");
+			cfg.addDefault("Online", "§8§l[§9§lReflexcraft§8§l] §7 Dieser Spieler ist leider nicht online");
 		if (!cfg.contains("Warn"))
 			cfg.addDefault("Warn", "§8§l[§9§lWarn§8§l] §7");
 		if (!cfg.contains("Tp"))
@@ -128,6 +134,9 @@ public class SystemData {
 		auslastung /= 100D;
 		return auslastung;
 	}
+	
+	public static ArrayList<TpaObject> tpaList = new ArrayList<TpaObject>();
+	public static ArrayList<Player> tpdenyList = new ArrayList<Player>();
 
 	public static File SystemData;
 	public static File OnlineData;

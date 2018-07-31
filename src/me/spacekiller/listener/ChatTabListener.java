@@ -18,10 +18,13 @@ public class ChatTabListener implements Listener{
 	
 	@EventHandler
 	public void onTab(TabCompleteEvent e) {
-		if(e.getCompletions().get(0).startsWith("/") && !e.getSender().hasPermission("server.plugin")) {
-			e.setCancelled(true);
-			e.getSender().sendMessage(SystemData.Server + "§7§lNutze /hilfe um die Befehle nachzuschauen.");
+		if(!e.getCompletions().isEmpty() && !(e.getCompletions() != null)) {
+			if(e.getCompletions().get(0).startsWith("/") && !e.getSender().hasPermission("server.plugin")) {
+				e.setCancelled(true);
+				e.getSender().sendMessage(SystemData.Server + "§7§lNutze /hilfe um die Befehle nachzuschauen.");
+			}
 		}
+		
 	}
 
 }

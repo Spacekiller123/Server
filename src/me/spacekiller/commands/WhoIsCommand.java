@@ -1,5 +1,7 @@
 package me.spacekiller.commands;
 
+import org.bukkit.Bukkit;
+import org.bukkit.OfflinePlayer;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
@@ -35,8 +37,24 @@ public class WhoIsCommand implements CommandExecutor {
 					sender.sendMessage("§7§lIP: §f" + p.getAddress().toString());
 					sender.sendMessage("§7§lHost: §f" + p.getAddress().getHostString());
 					sender.sendMessage("§7§lGespielte Zeit: §f" + time);
-				}else {
-					
+				}else if(args.length == 1){
+					OfflinePlayer op = Bukkit.getOfflinePlayer(args[0]);
+					if(op.isOnline()) {
+						int days = cfg.getInt(sender.getName() + ".Tage");
+						int hours  = cfg.getInt(sender.getName() + ".Stunden");
+						int minutes = cfg.getInt(sender.getName() + ".Minuten");
+						int seconds = cfg.getInt(sender.getName() + ".Sekunden");
+						String time = "§r§l" + days + " §7Tage, §r§l" + hours + " §7Stunden, §r§l" + minutes + " §7Minuten und §r§l" + seconds + " §7Sekunden" ;
+						sender.sendMessage("§7§lWhoIs von §f" + op.getPlayer().getName());
+						sender.sendMessage("§7§lName: §f" + op.getPlayer().getName());
+						sender.sendMessage("§7§lNickname: §f" + op.getPlayer().getDisplayName());
+						sender.sendMessage("§7§lUUID: §f" + op.getPlayer().getUniqueId());
+						sender.sendMessage("§7§lIP: §f" + op.getPlayer().getAddress().toString());
+						sender.sendMessage("§7§lHost: §f" + op.getPlayer().getAddress().getHostString());
+						sender.sendMessage("§7§lGespielte Zeit: §f" + time);
+					}else {
+						sender.sendMessage(SystemData.Online);
+					}
 				}
 			}else {
 				

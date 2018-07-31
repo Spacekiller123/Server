@@ -7,12 +7,8 @@ import org.bukkit.entity.Player;
 
 import me.spacekiller.main.Main;
 import me.spacekiller.main.SystemData;
-import me.spacekiller.util.JsonBuilder;
-import me.spacekiller.util.JsonBuilder.ClickAction;
 
-public class HelpCommand implements CommandExecutor{
-
-	JsonBuilder jb;
+public class HelpCommand implements CommandExecutor {
 	
 	Main plugin;
 	

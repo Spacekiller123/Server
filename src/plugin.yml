@@ -10,12 +10,16 @@ commands:
       description: gamemode
    gm:
       description: gamemode
+   gui:
+      description: gui
    h:
       description: help
    help:
       description: help
    joinmessage:
       description: set joinmessage
+   nick:
+      description: nick
    onlinezeit:
       description: shows onlinetime
    ram:
@@ -30,5 +34,13 @@ commands:
       description: spacedragon
    spawn:
       description: spawntp
+   tp:
+      description: tp
+   tpaccept:
+      description: tp
+   tpdecline:
+      description: tp
+   tpdeny:
+      description: tp
    whois:
       description: WhoIs

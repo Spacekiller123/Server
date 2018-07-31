@@ -7,6 +7,7 @@ import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import me.spacekiller.commands.*;
+import me.spacekiller.listener.ChatListener;
 import me.spacekiller.listener.ChatTabListener;
 import me.spacekiller.listener.DeathListener;
 import me.spacekiller.listener.JoinListener;
@@ -15,7 +16,7 @@ import me.spacekiller.listener.LeaveListener;
 public class Main extends JavaPlugin {
 
 	private FileConfiguration cfg;
-
+	
 	public void onEnable() {
 		System.out.println("[]=============================[]");
 		System.out.println("|       Server Aktiviert!       |");
@@ -32,25 +33,33 @@ public class Main extends JavaPlugin {
 	public void registerCommands() {
 		getCommand("gm").setExecutor(new GamemodeCommand(this));
 		getCommand("gamemode").setExecutor(new GamemodeCommand(this));
+		getCommand("gui").setExecutor(new GuiCommand(this));
 		getCommand("?").setExecutor(new HelpCommand(this));
 		getCommand("h").setExecutor(new HelpCommand(this));
 		getCommand("help").setExecutor(new HelpCommand(this));
 		getCommand("joinMessage").setExecutor(new JoinMessageCommand(this));
+		getCommand("nick").setExecutor(new NickCommand(this));
 		getCommand("onlinezeit").setExecutor(new OnlineZeitCommand(this));
 		getCommand("pl").setExecutor(new PluginCommand(this));
 		getCommand("plugin").setExecutor(new PluginCommand(this));
 		getCommand("ram").setExecutor(new RamCommand(this));
 		getCommand("ramcheck").setExecutor(new RamCheckCommand(this));
 		getCommand("spacedragon").setExecutor(new SpaceDragonCommand(this));
-		getCommand("spawn").setExecutor(new SpawnCommand(this));
+		getCommand("tp").setExecutor(new TpCommand(this));
+		getCommand("tpaccept").setExecutor(new TpCommand(this));
+		getCommand("tpdecline").setExecutor(new TpCommand(this));
+		getCommand("tpdeny").setExecutor(new TpCommand(this));
+		getCommand("spawn").setExecutor(new TpCommand(this));
 		getCommand("whois").setExecutor(new WhoIsCommand(this));
 		
 	}
 
 	public void registerEvents() {
 		PluginManager pm = getServer().getPluginManager();
+		pm.registerEvents(new ChatListener(this), this);
 		pm.registerEvents(new ChatTabListener(this), this);
 		pm.registerEvents(new DeathListener(this), this);
+		pm.registerEvents(new GuiCommand(this), this);
 		pm.registerEvents(new JoinListener(this), this);
 		pm.registerEvents(new LeaveListener(this), this);
 		pm.registerEvents(new SpaceDragonCommand(this), this);
