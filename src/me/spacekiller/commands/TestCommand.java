@@ -35,6 +35,7 @@ public class TestCommand implements CommandExecutor {
 				owners = owners + pp.getName() + " ";
 			}
 			sender.sendMessage(owners);
+			
 		}
 		return false;
 	}
