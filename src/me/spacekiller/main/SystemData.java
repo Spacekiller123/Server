@@ -20,6 +20,9 @@ public class SystemData {
 	public SystemData() {
 	}
 	
+	public static ArrayList<Player> teamchat = new ArrayList<Player>();
+	public static ArrayList<Player> teamchatsee = new ArrayList<Player>();
+	
 	public static SystemData instance;
 
 	public static void loadConfig() {
