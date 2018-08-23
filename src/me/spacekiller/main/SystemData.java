@@ -113,6 +113,32 @@ public class SystemData {
 		return s;
 	}
 
+	public static String removeFormattingColorCodes(String s) {
+		s = s.replaceAll("&1", "");
+		s = s.replaceAll("&2", "");
+		s = s.replaceAll("&3", "");
+		s = s.replaceAll("&4", "");
+		s = s.replaceAll("&5", "");
+		s = s.replaceAll("&6", "");
+		s = s.replaceAll("&7", "");
+		s = s.replaceAll("&8", "");
+		s = s.replaceAll("&9", "");
+		s = s.replaceAll("&0", "");
+		s = s.replaceAll("&a", "");
+		s = s.replaceAll("&b", "");
+		s = s.replaceAll("&c", "");
+		s = s.replaceAll("&d", "");
+		s = s.replaceAll("&e", "");
+		s = s.replaceAll("&f", "");
+		s = s.replaceAll("&o", "");
+		s = s.replaceAll("&l", "");
+		s = s.replaceAll("&k", "");
+		s = s.replaceAll("&m", "");
+		s = s.replaceAll("&n", "");
+		s = s.replaceAll("&r", "");
+		return s;
+	}
+	
 	public static String design(String text) {
 		String supertext = cfg.getString(".design");
 		return supertext;

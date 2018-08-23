@@ -67,7 +67,7 @@ public class Main extends JavaPlugin {
 		pm.registerEvents(new JoinListener(this), this);
 		pm.registerEvents(new LeaveListener(this), this);
 		pm.registerEvents(new SpaceDragonCommand(this), this);
-		pm.registerEvents(new TablistListener(this), this);
+	//	pm.registerEvents(new TablistListener(this), this);
 	}
 
 	private void startTimer() {

@@ -24,7 +24,7 @@ public class RamCheckCommand implements CommandExecutor {
 				double usedmemory = (Runtime.getRuntime().totalMemory() - Runtime.getRuntime().freeMemory()) / 1048576L;
 				if ((ram >= 0.0D) && (ram <= 10.0D)) {
 					p.sendMessage("§3=======§9§lRam§3=======");
-					p.sendMessage("§a§l▄");
+					p.sendMessage("§a§l▬");
 					p.sendMessage("§lDie aktulle Ram-Auslastung ist §a§l" + ram + "§r§l%!");
 					p.sendMessage(
 							"§l(§a§l" + usedmemory + " §r§lMB§r/ §a§l" + Runtime.getRuntime().totalMemory() / 1048576.0D
@@ -33,7 +33,7 @@ public class RamCheckCommand implements CommandExecutor {
 				}
 				if ((ram >= 10.0D) && (ram <= 20.0D)) {
 					p.sendMessage("§3=======§9§lRam§3=======");
-					p.sendMessage("§a§l█");
+					p.sendMessage("§a§l■");
 					p.sendMessage("§lDie aktulle Ram-Auslastung ist §a§l" + ram + "§r§l%!");
 					p.sendMessage(
 							"§l(§a§l" + usedmemory + " §r§lMB§r/ §a§l" + Runtime.getRuntime().totalMemory() / 1048576.0D
@@ -42,7 +42,7 @@ public class RamCheckCommand implements CommandExecutor {
 				}
 				if ((ram >= 20.0D) && (ram <= 30.0D)) {
 					p.sendMessage("§3=======§9§lRam§3=======");
-					p.sendMessage("§2§l██");
+					p.sendMessage("§2§l■■");
 					p.sendMessage("§lDie aktulle Ram-Auslastung ist §2§l" + ram + "§r§l%!");
 					p.sendMessage(
 							"§l(§2§l" + usedmemory + " §r§lMB§r/ §2§l" + Runtime.getRuntime().totalMemory() / 1048576.0D
@@ -51,7 +51,7 @@ public class RamCheckCommand implements CommandExecutor {
 				}
 				if ((ram >= 30.0D) && (ram <= 40.0D)) {
 					p.sendMessage("§3=======§9§lRam§3=======");
-					p.sendMessage("§2§l███");
+					p.sendMessage("§2§l■■■");
 					p.sendMessage("§lDie aktulle Ram-Auslastung ist §2§l" + ram + "§r§l%!");
 					p.sendMessage(
 							"§l(§2§l" + usedmemory + " §r§lMB§r/ §2§l" + Runtime.getRuntime().totalMemory() / 1048576.0D
@@ -60,7 +60,7 @@ public class RamCheckCommand implements CommandExecutor {
 				}
 				if ((ram >= 40.0D) && (ram <= 50.0D)) {
 					p.sendMessage("§3=======§9§lRam§3=======");
-					p.sendMessage("§6§l████");
+					p.sendMessage("§6§l■■■■");
 					p.sendMessage("§lDie aktulle Ram-Auslastung ist §6§l" + ram + "§r§l%!");
 					p.sendMessage(
 							"§l(§6§l" + usedmemory + " §r§lMB§r/ §6§l" + Runtime.getRuntime().totalMemory() / 1048576.0D
@@ -69,7 +69,7 @@ public class RamCheckCommand implements CommandExecutor {
 				}
 				if ((ram >= 50.0D) && (ram <= 60.0D)) {
 					p.sendMessage("§3=======§9§lRam§3=======");
-					p.sendMessage("§6§l█████");
+					p.sendMessage("§6§l■■■■■");
 					p.sendMessage("§lDie aktulle Ram-Auslastung ist §6§l" + ram + "§r§l%!");
 					p.sendMessage(
 							"§l(§6§l" + usedmemory + " §r§lMB§r/ §6§l" + Runtime.getRuntime().totalMemory() / 1048576.0D
@@ -78,7 +78,7 @@ public class RamCheckCommand implements CommandExecutor {
 				}
 				if ((ram >= 60.0D) && (ram <= 70.0D)) {
 					p.sendMessage("§3=======§9§lRam§3=======");
-					p.sendMessage("§6§l██████");
+					p.sendMessage("§6§l■■■■■■");
 					p.sendMessage("§lDie aktulle Ram-Auslastung ist §6§l" + ram + "§r§l%!");
 					p.sendMessage(
 							"§l(§6§l" + usedmemory + " §r§lMB§r/ §6§l" + Runtime.getRuntime().totalMemory() / 1048576.0D
@@ -87,7 +87,7 @@ public class RamCheckCommand implements CommandExecutor {
 				}
 				if ((ram >= 70.0D) && (ram <= 80.0D)) {
 					p.sendMessage("§3=======§9§lRam§3=======");
-					p.sendMessage("§c§l███████");
+					p.sendMessage("§c§l■■■■■■■");
 					p.sendMessage("§lDie aktulle Ram-Auslastung ist §c§l" + ram + "§r§l%!");
 					p.sendMessage(
 							"§l(§c§l" + usedmemory + " §r§lMB§r/ §c§l" + Runtime.getRuntime().totalMemory() / 1048576.0D
@@ -96,7 +96,7 @@ public class RamCheckCommand implements CommandExecutor {
 				}
 				if ((ram >= 80.0D) && (ram <= 90.0D)) {
 					p.sendMessage("§3=======§9§lRam§3=======");
-					p.sendMessage("§c§l████████");
+					p.sendMessage("§c§l■■■■■■■■");
 					p.sendMessage("§lDie aktulle Ram-Auslastung ist §c§l" + ram + "§r§l%!");
 					p.sendMessage(
 							"§l(§c§l" + usedmemory + " §r§lMB§r/ §c§l" + Runtime.getRuntime().totalMemory() / 1048576.0D
@@ -105,7 +105,7 @@ public class RamCheckCommand implements CommandExecutor {
 				}
 				if ((ram >= 90.0D) && (ram < 100.0D)) {
 					p.sendMessage("§3=======§9§lRam§3=======");
-					p.sendMessage("§4§l█████████");
+					p.sendMessage("§4§l■■■■■■■■■");
 					p.sendMessage("§lDie aktulle Ram-Auslastung ist §4§l" + ram + "§r§l%!");
 					p.sendMessage(
 							"§l(§4§l" + usedmemory + " §r§lMB§r/ §4§l" + Runtime.getRuntime().totalMemory() / 1048576.0D
@@ -114,7 +114,7 @@ public class RamCheckCommand implements CommandExecutor {
 				}
 				if (ram == 100.0D) {
 					p.sendMessage("§3=======§9§lRam§3=======");
-					p.sendMessage("§4§l██████████");
+					p.sendMessage("§4§l■■■■■■■■■■");
 					p.sendMessage("§lDie aktulle Ram-Auslastung ist §4§l" + ram + "§r§l%!");
 					p.sendMessage(
 							"§l(§4§l" + usedmemory + " §r§lMB§r/ §4§l" + Runtime.getRuntime().totalMemory() / 1048576.0D

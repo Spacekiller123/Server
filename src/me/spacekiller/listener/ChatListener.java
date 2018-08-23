@@ -29,7 +29,7 @@ public class ChatListener implements Listener {
 		}
 		String prefix = PermissionsEx.getPermissionManager().getUser(e.getPlayer().getUniqueId()).getPrefix().replaceAll("&", "§");
 		String world = e.getPlayer().getLocation().getWorld().getName();
-		e.setFormat("§8§l[§9§l" + world + "§8§l]§f" + prefix + " %s: %s");
+		e.setFormat("§8§l[§9§l" + world + "§8§l]§f" + prefix + " %s§8§l>§7 %s");
 	}
 	
 	@EventHandler(priority=EventPriority.LOW)

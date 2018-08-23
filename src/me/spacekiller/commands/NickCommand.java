@@ -26,8 +26,29 @@ public class NickCommand implements CommandExecutor {
 				sender.sendMessage(SystemData.Server + "Dein Nickname ist: " + p.getDisplayName());
 			}else if(args.length == 1) {
 				if(sender.hasPermission("server.nick.set")) {
-					p.setDisplayName(SystemData.getFormattingColorCodes(args[0]) + "§f");
-					sender.sendMessage(SystemData.Server + "Dein Nickname ist nun: " + p.getDisplayName());
+					if(SystemData.removeFormattingColorCodes(args[0]).length() > 2) {
+						if(SystemData.removeFormattingColorCodes(args[0]).equalsIgnoreCase(sender.getName())) {
+							p.setDisplayName(SystemData.getFormattingColorCodes(args[0]) + "§f");
+							sender.sendMessage(SystemData.Server + "Dein Nickname ist nun: " + p.getDisplayName());
+							System.out.println("samename");
+						}else if(sender.getName().contains("[0-9]+")) {
+							if(SystemData.removeFormattingColorCodes(args[0]).equalsIgnoreCase(sender.getName().replaceAll("[0-9]+", ""))) {
+								p.setDisplayName(SystemData.getFormattingColorCodes(args[0]) + "§f");
+								sender.sendMessage(SystemData.Server + "Dein Nickname ist nun: " + p.getDisplayName());
+								System.out.println("Number");
+							}else {
+								sender.sendMessage(SystemData.Server + "Ungültiger Nickname, bei Fragen wende dich an einen Teammitglied");
+							}
+						}else if(SystemData.removeFormattingColorCodes(args[0]).startsWith(sender.getName().substring(0, 2))){
+							p.setDisplayName(SystemData.getFormattingColorCodes(args[0]) + "§f");
+							sender.sendMessage(SystemData.Server + "Dein Nickname ist nun: " + p.getDisplayName());
+							System.out.println("short");
+						}else {
+							sender.sendMessage(SystemData.Server + "Ungültiger Nickname, bei Fragen wende dich an einen Teammitglied");
+						}
+					}else {
+						sender.sendMessage(SystemData.Server + "Zu kurzer Nickname");
+					}
 				}else {
 					sender.sendMessage(SystemData.noPerm);
 				}

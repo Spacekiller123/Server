@@ -52,10 +52,10 @@ public class WhoIsCommand implements CommandExecutor {
 				}else if(args.length == 1){
 					OfflinePlayer op = Bukkit.getOfflinePlayer(args[0]);
 					if(op.isOnline()) {
-						int days = cfg.getInt(sender.getName() + ".Tage");
-						int hours  = cfg.getInt(sender.getName() + ".Stunden");
-						int minutes = cfg.getInt(sender.getName() + ".Minuten");
-						int seconds = cfg.getInt(sender.getName() + ".Sekunden");
+						int days = cfg.getInt(op.getName() + ".Tage");
+						int hours  = cfg.getInt(op.getName() + ".Stunden");
+						int minutes = cfg.getInt(op.getName() + ".Minuten");
+						int seconds = cfg.getInt(op.getName() + ".Sekunden");
 						String time = "§r§l" + days + " §7Tage, §r§l" + hours + " §7Stunden, §r§l" + minutes + " §7Minuten und §r§l" + seconds + " §7Sekunden" ;
 						sender.sendMessage("§7§lWhoIs von §f" + op.getPlayer().getName());
 						sender.sendMessage("§7§lName: §f" + op.getPlayer().getName());
@@ -64,8 +64,28 @@ public class WhoIsCommand implements CommandExecutor {
 						sender.sendMessage("§7§lIP: §f" + op.getPlayer().getAddress().toString());
 						sender.sendMessage("§7§lHost: §f" + op.getPlayer().getAddress().getHostString());
 						sender.sendMessage("§7§lGespielte Zeit: §f" + time);
-					}else {
-						sender.sendMessage(SystemData.Online);
+					}else{
+						boolean found = false;
+						for(Player p : Bukkit.getOnlinePlayers()) {
+							if(SystemData.removeFormattingColorCodes(p.getDisplayName().replaceAll("§", "&")).equalsIgnoreCase(args[0])) {
+								found = true;
+								int days = cfg.getInt(p.getName() + ".Tage");
+								int hours  = cfg.getInt(p.getName() + ".Stunden");
+								int minutes = cfg.getInt(p.getName() + ".Minuten");
+								int seconds = cfg.getInt(p.getName() + ".Sekunden");
+								String time = "§r§l" + days + " §7Tage, §r§l" + hours + " §7Stunden, §r§l" + minutes + " §7Minuten und §r§l" + seconds + " §7Sekunden" ;
+								sender.sendMessage("§7§lWhoIs von §f" + p.getPlayer().getName());
+								sender.sendMessage("§7§lName: §f" + p.getPlayer().getName());
+								sender.sendMessage("§7§lNickname: §f" + p.getPlayer().getDisplayName());
+								sender.sendMessage("§7§lUUID: §f" + p.getPlayer().getUniqueId());
+								sender.sendMessage("§7§lIP: §f" + p.getPlayer().getAddress().toString());
+								sender.sendMessage("§7§lHost: §f" + p.getPlayer().getAddress().getHostString());
+								sender.sendMessage("§7§lGespielte Zeit: §f" + time);
+							}
+						}
+						if(!found) {
+							sender.sendMessage(SystemData.Online);
+						}
 					}
 				}
 			}else {

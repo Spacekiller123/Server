@@ -78,6 +78,7 @@ public class PlayerData {
 		cfg.set(pn + ".location.x", p.getLocation().getX());
 		cfg.set(pn + ".location.y", p.getLocation().getY());
 		cfg.set(pn + ".location.z", p.getLocation().getZ());
+		cfg.set(pn + ".money", 0);
 		saveConfig();
 	}
 
