@@ -38,6 +38,8 @@ commands:
       description: spacedragon
    spawn:
       description: spawntp
+   setspawn:
+      description: setspawn
    team:
       description: team
    teamchat:

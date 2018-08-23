@@ -21,8 +21,7 @@ public class Main extends JavaPlugin {
 		System.out.println("|        by Spacekiller!        |");
 		System.out.println("[]=============================[]");
 
-		loadConfig();
-		SystemData.loadConfig();
+		loadConfig();;
 		registerCommands();
 		registerEvents();
 		startTimer();
@@ -51,6 +50,7 @@ public class Main extends JavaPlugin {
 		getCommand("tpdecline").setExecutor(new TpCommand(this));
 		getCommand("tpdeny").setExecutor(new TpCommand(this));
 		getCommand("spawn").setExecutor(new SpawnCommand(this));
+		getCommand("setspawn").setExecutor(new SpawnCommand(this));
 		getCommand("team").setExecutor(new TeamCommand(this));
 		getCommand("test").setExecutor(new TestCommand(this));
 		getCommand("whois").setExecutor(new WhoIsCommand(this));
@@ -113,6 +113,7 @@ public class Main extends JavaPlugin {
 
 	public void loadConfig() {
 		SystemData.loadConfig();
+		PlayerData.loadConfig();
 		cfg = getConfig();
 		if (!cfg.contains("JoinMessage"))
 			cfg.addDefault("JoinMessage", true);

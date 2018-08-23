@@ -37,11 +37,24 @@ public class TablistListener implements Listener {
     
     public TablistListener(Main plugin) {
     	this.plugin = plugin;
+    	setPrefix();
     }
 	
 	public void setPrefix() {
     	sco = Bukkit.getScoreboardManager();
         sb = sco.getMainScoreboard();
+        sb.getTeam("O").unregister();
+        sb.getTeam("D").unregister();
+        sb.getTeam("A").unregister();
+        sb.getTeam("M").unregister();
+        sb.getTeam("B").unregister();
+        sb.getTeam("SU").unregister();
+        sb.getTeam("TS").unregister();
+        sb.getTeam("YT").unregister();
+        sb.getTeam("VIPP").unregister();
+        sb.getTeam("PVIP").unregister();
+        sb.getTeam("VIP").unregister();
+        sb.getTeam("S").unregister();
         O = sb.registerNewTeam("O");
         D = sb.registerNewTeam("D");
         A = sb.registerNewTeam("A");
@@ -71,10 +84,6 @@ public class TablistListener implements Listener {
 	@SuppressWarnings("deprecation")
 	@EventHandler
 	public void onJoin(PlayerJoinEvent e) {
-		if(!initiated) {
-			setPrefix();
-			initiated = true;
-		}
 		PermissionManager pex = PermissionsEx.getPermissionManager();
 		Player p = e.getPlayer();
 		p.setScoreboard(sb);

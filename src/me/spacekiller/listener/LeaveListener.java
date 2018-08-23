@@ -6,6 +6,7 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerQuitEvent;
 
 import me.spacekiller.main.Main;
+import me.spacekiller.main.PlayerData;
 
 public class LeaveListener implements Listener {
 	
@@ -22,5 +23,6 @@ public class LeaveListener implements Listener {
 		if(!cfg.getBoolean("LeaveMessage")) {
 			e.setQuitMessage(null);
 		}
+		PlayerData.addPlayer(e.getPlayer());
 	}
 }
