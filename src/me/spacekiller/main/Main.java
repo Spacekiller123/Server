@@ -26,8 +26,23 @@ public class Main extends JavaPlugin {
 		registerEvents();
 		startTimer();
 	}
+	
+	public static boolean isNumber(String s) {
+		try {
+			Double.parseDouble(s);
+		} catch (NumberFormatException e){
+			return false;
+		}
+		
+		return true;
+	}
 
 	public void registerCommands() {
+		getCommand("ban").setExecutor(new BanCommand());
+		getCommand("uban").setExecutor(new BanCommand());
+		getCommand("unban").setExecutor(new UnbanCommand());
+		getCommand("tban").setExecutor(new TempBanCommand());
+		getCommand("tempban").setExecutor(new TempBanCommand());
 		getCommand("gm").setExecutor(new GamemodeCommand(this));
 		getCommand("gamemode").setExecutor(new GamemodeCommand(this));
 		getCommand("gui").setExecutor(new GuiCommand(this));
@@ -54,7 +69,10 @@ public class Main extends JavaPlugin {
 		getCommand("team").setExecutor(new TeamCommand(this));
 		getCommand("test").setExecutor(new TestCommand(this));
 		getCommand("whois").setExecutor(new WhoIsCommand(this));
-		
+		getCommand("delwarp").setExecutor(new DelWarpCommand());
+		getCommand("setwarp").setExecutor(new SetWarpCommand());
+		getCommand("warp").setExecutor(new WarpCommand());
+		getCommand("warps").setExecutor(new WarpsCommand());
 	}
 
 	public void registerEvents() {

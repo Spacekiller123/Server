@@ -4,6 +4,16 @@ version: 1.0
 author: Spacekiller
 softdepend: [PermissionsEx]
 commands:
+   ban:
+      description: ban
+   uban:
+      description: ban
+   unban:
+      description: ban
+   tempban:
+      description: ban
+   tban:
+      description: ban
    ?:
       description: help
    gamemode:
@@ -56,3 +66,11 @@ commands:
       description: tp
    whois:
       description: WhoIs
+   delwarp:
+      description: Warp
+   setwarp:
+      description: Warp
+   warp:
+      description: Warp
+   warps:
+      description: Warp
